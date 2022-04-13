@@ -50,7 +50,6 @@ DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
   --disable-ffplay \
   --disable-ffserver \
   --disable-ffprobe \
-  --disable-encoders \
   --disable-muxers \
   --disable-devices \
   --disable-protocols \
@@ -67,6 +66,13 @@ DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
   --enable-neon \
   --enable-protocol=file \
   --enable-swscale \
+  --enable-libx264 \
+  --disable-muxers \
+  --enable-muxer=image2 \
+  --enable-muxer=matroska \
+  --enable-muxer=mp4 \
+  --enable-muxer=avi \
+  --enable-muxer=h264 \
   --disable-demuxers \
   --enable-demuxer=flv \
   --enable-demuxer=h261 \
@@ -114,6 +120,8 @@ DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
   --enable-bsf=remove_extradata \
   --enable-bsf=text2movsub \
   --enable-encoder=mjpeg \
+  --enable-encoder=libx264 \
+  --enable-encoder=libx264rgb \
   --disable-indev=v4l2 \
   --pkg-config=${PKG_CONFIG_EXECUTABLE} \
   ${EXTRA_BUILD_CONFIGURATION_FLAGS} \
